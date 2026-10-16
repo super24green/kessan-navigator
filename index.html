@@ -66,7 +66,7 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}body,body:has(.top){backgrou
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
 @media print{.dock,.command{display:none!important}body{background:white!important;color:black!important}}
 
-/* v2.4 mobile layout and readability */
+/* v2.5 mobile layout and readability */
 .hero h1,.hero p{ text-shadow:none!important;filter:none!important;}
 .hero h1 span{ text-shadow:none!important;}
 @media(max-width:650px){
@@ -81,7 +81,7 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}body,body:has(.top){backgrou
  .map-branches{flex-wrap:wrap!important;overflow-wrap:anywhere}
 }
 
-/* v2.4 tax reference and practice panels */
+/* v2.5 tax reference and practice panels */
 .taxbox{background:#111722;border:1px solid #345068;border-radius:18px;padding:21px;margin:16px 0 23px;box-shadow:inset 0 0 22px #13b5ee0b}
 .taxbox h2{font-size:clamp(21px,3vw,28px);color:#f4fbff;margin:0 0 9px}
 .taxbox p,.taxbox li{color:#c6d7e7;line-height:1.65}
@@ -91,14 +91,16 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}body,body:has(.top){backgrou
 .taxbadge{color:#ffe397;background:#493a15;border:1px solid #8b6b30;border-radius:8px;padding:7px 10px;display:inline-block;font-size:13px}
 .taxbox a{color:#77e8ff;text-decoration:underline}.taxlinks{display:flex;gap:12px;flex-wrap:wrap}
 @media(max-width:550px){.taxgrid{grid-template-columns:1fr}.taxbox{padding:14px}.taxcell b{font-size:16px}}
-</style></head><body><header class="top"><div class="wrap"><div class="logo"><span>✧</span>決算ナビゲーター <span class="tiny">v2.4 PWA</span></div><nav class="topnav"><a href="#settings" class="active">⌂ ホーム</a><a href="#mapSection">◇ 業務マップ</a><a href="#work">▤ お役立ち資料</a></nav><select id="soundStyle" class="soundSelect" aria-label="操作音"><option value="soft">ソフトクリック</option><option value="wood">木の音</option><option value="off">無音</option></select></div></header><section class="hero"><div class="wrap"><h1>迷わず、もれなく、確実に。</h1><p>貴社の条件に合わせて、決算に必要な業務をナビゲートします。</p></div></section><main class="wrap"><section class="command" id="command"><div><p class="eyebrow">MISSION CONTROL / TODAY</p><h2>今日の業務を、ここから。</h2><p id="missionText">案件を選択して、作業を再開しましょう。</p></div><button id="resume" class="btn primary bigAction">▶ 作業を再開</button></section>
+</style><style>
+.de-section{margin:18px 0;padding:16px;background:#090d17;border:1px solid #2c5265;border-radius:15px;color:#f3f7ff}.de-section>h3{margin:18px 0 10px;color:#65e6ff;font-size:18px}.de-section>h3:first-child{margin-top:0}.de-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,315px),1fr));gap:12px}.de-result{border:1px solid #45506b;background:#151d2c;border-radius:13px;padding:15px;min-width:0}.de-result.ok{border-color:#2ccca5}.de-result.review{border-color:#e7a64c}.de-title{font-weight:800;display:flex;justify-content:space-between;gap:8px;align-items:start;flex-wrap:wrap}.de-status{font-size:11px;border:1px solid currentColor;padding:3px 6px;border-radius:15px;color:#ffbd64}.de-result.ok .de-status{color:#5df4c0}.de-value{font-size:20px;font-weight:900;color:#fff;overflow-wrap:anywhere}.de-value small{font-size:12px;color:#b9c6d9}.de-note{font-size:12px;line-height:1.6;color:#a9bdd1}.de-result a{color:#79ddff}.de-scroll{overflow-x:auto;max-width:100%}.de-scroll table{width:100%;border-collapse:collapse;min-width:320px;font-size:12px}.de-scroll th,.de-scroll td{border-bottom:1px solid #45506b;padding:8px 4px;text-align:left}.de-requires{display:grid;gap:8px}.de-requires>div{border-left:3px solid #30d8f2;background:#172030;padding:10px;border-radius:5px}.de-requires small{display:block;color:#c3cad9;margin-top:4px}
+</style></head><body><header class="top"><div class="wrap"><div class="logo"><span>✧</span>決算ナビゲーター <span class="tiny">v2.5 PWA</span></div><nav class="topnav"><a href="#settings" class="active">⌂ ホーム</a><a href="#mapSection">◇ 業務マップ</a><a href="#work">▤ お役立ち資料</a></nav><select id="soundStyle" class="soundSelect" aria-label="操作音"><option value="soft">ソフトクリック</option><option value="wood">木の音</option><option value="off">無音</option></select></div></header><section class="hero"><div class="wrap"><h1>迷わず、もれなく、確実に。</h1><p>貴社の条件に合わせて、決算に必要な業務をナビゲートします。</p></div></section><main class="wrap"><section class="command" id="command"><div><p class="eyebrow">MISSION CONTROL / TODAY</p><h2>今日の業務を、ここから。</h2><p id="missionText">案件を選択して、作業を再開しましょう。</p></div><button id="resume" class="btn primary bigAction">▶ 作業を再開</button></section>
 <section class="portfolio" id="portfolio"><h2 class="secTitle">▦ 複数会社の進捗ボード</h2><p class="subtitle">架空の名称で複数の案件を登録。切り替えるだけで、各社の条件・チェック・メモを個別に保存します。</p><div class="companybar"><div class="field"><label for="companyNew">案件名（架空名）</label><input id="companyNew" placeholder="例：A社 9月決算" maxlength="60"></div><button class="btn primary" id="addCompany">＋ 案件を追加</button></div><div id="companyCards" class="companycards"></div><div class="company-actions"><span class="mutedlabel" id="companySelected"></span><button class="btn ghost small" id="renameCompany">名称変更</button><button class="btn ghost small" id="copyCompany">条件を複製</button><button class="btn ghost small" id="deleteCompany">案件を削除</button></div></section><section class="section" id="settings"><div class="heading"><div><h2>▤ 会社条件</h2><div class="subtitle">架空の条件で試してください。顧問先の機密情報は入力しないでください。</div></div><button class="btn ghost small" id="reset">条件を初期化</button></div><div class="fields" id="fields"></div><div class="row mainactions"><button id="build" class="btn primary">🗺 業務マップを表示 →</button><button id="save" class="btn ghost">進捗を保存</button><button id="export" class="btn ghost">バックアップを保存</button><label class="btn ghost" style="cursor:pointer">バックアップから復元<input id="import" type="file" accept=".json,application/json" hidden></label></div><div class="disclaimer">⚠ この試作版は業務案内ツールです。税務上の要否・期限・特例適用を確定判定するものではありません。年度、届出、基準期間、資本金、事務所所在地等の詳細確認が必要です。判定できない作業は「要確認」に残します。</div></section>
-<section class="taxbox" id="localTax"><h2>▣ 地方税・税率ナビ <span style="font-size:13px;color:#89e9ff">v2.4</span></h2><p>会社条件の「主たる所在地」に連動します。税率は事業年度・資本金・所得・業種・市区町村・事務所の所在地によって変わります。</p><div id="taxRates" aria-live="polite"></div></section><section id="mapSection" class="section map"><div class="heading"><div><h2>☷ 業務マップ</h2><div class="subtitle">工程を選ぶとチェックリストと判断理由が表示されます。</div></div><button class="btn small ghost" id="mapPrint">この業務マップを印刷</button></div><div class="stations" id="stations"></div><div class="map-branches"><span>⌁ 条件分岐</span><span>▤ 固定資産（該当する場合）</span><span>◈ 消費税確認（該当する場合）</span></div><div class="map-legend"><span><i class="dot" style="background:#218772"></i>工程完了</span><span><i class="dot" style="background:#d8791d"></i>現在地</span><span><i class="dot" style="background:#63507d"></i>未完了</span></div></section>
+<section class="taxbox" id="localTax"><h2>▣ 地方税・税率ナビ <span style="font-size:13px;color:#89e9ff">v2.5</span></h2><p>会社条件の「主たる所在地」に連動します。税率は事業年度・資本金・所得・業種・市区町村・事務所の所在地によって変わります。</p><div id="taxRates" aria-live="polite"></div></section><section id="mapSection" class="section map"><div class="heading"><div><h2>☷ 業務マップ</h2><div class="subtitle">工程を選ぶとチェックリストと判断理由が表示されます。</div></div><button class="btn small ghost" id="mapPrint">この業務マップを印刷</button></div><div class="stations" id="stations"></div><div class="map-branches"><span>⌁ 条件分岐</span><span>▤ 固定資産（該当する場合）</span><span>◈ 消費税確認（該当する場合）</span></div><div class="map-legend"><span><i class="dot" style="background:#218772"></i>工程完了</span><span><i class="dot" style="background:#d8791d"></i>現在地</span><span><i class="dot" style="background:#63507d"></i>未完了</span></div></section>
 <section class="section" id="work"><div class="contentgrid"><aside class="side" id="nav"></aside><div class="detail"><div id="detail"></div></div></div></section><div class="foot">決算ナビゲーター Ver.2.3｜ローカルのブラウザ内で動作します。複数案件の条件・チェック・メモを端末内に自動保存。スマホとPC間の自動同期は未対応。顧問先情報は入れずにお試しください。税務判断・個人情報管理については所属事務所の方針に従ってください。</div></main><nav class="dock" aria-label="メインナビゲーション"><a href="#command" data-dock="home"><b>⌂</b><span>ホーム</span></a><a href="#portfolio" data-dock="cases"><b>▦</b><span>案件</span></a><a href="#mapSection" data-dock="map" class="active"><b>◇</b><span>業務マップ</span></a><a href="#work" data-dock="manual"><b>▤</b><span>手順</span></a><a href="#settings" data-dock="config"><b>⚙</b><span>条件</span></a></nav>
 
 <style>
 #precisionNav{margin:20px auto;padding:20px;border:1px solid #4c4465;border-radius:20px;background:#0c101a;color:#f4f5ff;max-width:1240px}#precisionNav h2{font-size:clamp(22px,3vw,29px);margin:4px 0 12px}#precisionNav h3{font-size:19px;margin:16px 0 8px;color:#9ce8f5}.pn-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px}.pn-field label{display:block;color:#cbd1e4;font-size:13px;margin-bottom:5px}.pn-field input,.pn-field select{width:100%;background:#171c2b;color:white;border:1px solid #525b72;padding:12px;border-radius:10px;min-height:46px;font-size:15px;box-sizing:border-box}.pn-card{background:#171d2b;border:1px solid #454a63;padding:13px;border-radius:12px;margin:10px 0;line-height:1.65}.pn-good{border-left:4px solid #19dfae}.pn-warn{border-left:4px solid #f9b448}.pn-danger{border-left:4px solid #fd7474}.pn-chip{display:inline-block;border:1px solid #526078;border-radius:30px;padding:3px 10px;font-size:12px;margin:2px 5px 2px 0}.pn-muted{color:#aeb8c9;font-size:13px}.pn-btn{background:linear-gradient(100deg,#1d8b9c,#7842a5);color:white;font-weight:700;border:0;padding:13px 18px;border-radius:12px;margin:12px 0;font-size:15px}.pn-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px}.pn-kpi{font-size:25px;font-weight:800;color:#c9f7ff}.pn-card a{color:#9ce8ff;text-decoration:underline;word-break:break-all}.pn-card summary{cursor:pointer;color:#d7e5ff;font-weight:650}.pn-alert{border:1px solid #ab7439;border-radius:10px;padding:12px;background:#30271c;color:#ffdc9c;margin:12px 0}
-</style><section id="precisionNav"><h2>◈ 条件判定センター <span class="pn-chip">v2.4 / 根拠付き</span></h2><p class="pn-muted">対象案件の申告情報を入力すると、期限・地方税の検証範囲・提出書類・未確認事項を整理します。入力値は端末内の案件別データとして保存。税率の最終確定・申告計算は行いません。</p><div class="pn-grid" id="precisionFields"></div><button class="pn-btn" id="precisionRun">◈ 条件を照合・判定</button><div id="precisionOutput" aria-live="polite"></div></section><script>
+</style><section id="precisionNav"><h2>◈ 条件判定センター <span class="pn-chip">v2.5 / 自動分岐エンジン</span></h2><p class="pn-muted">対象案件の申告情報を入力すると、期限・地方税の検証範囲・提出書類・未確認事項を整理します。入力値は端末内の案件別データとして保存。入力条件から税率候補・概算・必要資料を生成します。未検証の自治体や特殊法人は判定を保留します。</p><div class="pn-grid" id="precisionFields"></div><button class="pn-btn" id="precisionRun">◈ 条件を照合・判定</button><div id="precisionOutput" aria-live="polite"></div></section><script>
 'use strict';
 const CONFIG=[
 ['term','事業年度','第1期','第1期','第2期以降','不明'],['form','法人区分','株式会社','株式会社','合同会社','その他','不明'],['pref','主たる所在地','東京都','北海道','青森県','岩手県','宮城県','秋田県','山形県','福島県','茨城県','栃木県','群馬県','埼玉県','千葉県','東京都','神奈川県','新潟県','富山県','石川県','福井県','山梨県','長野県','岐阜県','静岡県','愛知県','三重県','滋賀県','京都府','大阪府','兵庫県','奈良県','和歌山県','鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県','福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県','不明'],['month','決算月','9月',...Array.from({length:12},(_,i)=>`${i+1}月`),'不明'],['capital','資本金（設立時含む）','不明','1,000万円未満','1,000万円以上','不明'],['invoice','インボイス','不明','登録あり','登録なし','不明'],['tax','消費税の課税区分','不明','課税（原則）','課税（簡易）','免税','不明'],['staff','従業員','不明','あり','なし','不明'],['salary','役員報酬','不明','あり','なし','不明'],['loan','借入金','不明','あり','なし','不明'],['asset','固定資産','不明','あり','なし','不明'],['branch','他都道府県に事務所','不明','あり','なし','不明']
@@ -205,6 +207,9 @@ const P_FIELDS=[
  ['capitalExact','資本金（円）','number'],['capitalTax','資本金等の額（円）','number'],
  ['income','税務上の所得金額（円）','number'],['corporateTax','法人税額（円）','number'],
  ['employeeCount','従業者数（人）','number'],
+ ['priorSales','前々期の課税売上高（円）','number'],['baseSales','基準期間の課税売上高（円）','number'],
+ ['groupLarge','大法人による完全支配等','select','不明','該当なし確認済み','該当'],
+ ['largeIncomeHistory','過去3年の所得条件','select','不明','年10億円超の年度なし確認済み','年10億円超の年度あり'],
  ['offices','事務所等の所在地数','select','不明','1か所','複数'],
  ['entityClass','課税対象の法人区分','select','不明','普通法人（一般業種）','公益法人等','特別法人','電気・ガス・保険等'],
  ['external','外形標準課税の判定','select','不明','該当','非該当'],
@@ -230,8 +235,67 @@ let docs=[['法人税・地方法人税','別表一、四、五（一）、五�
 let all=`<div class="pn-alert">⚠️ この画面は申告計算の確定機能ではありません。税率の確定には対象年度の自治体資料・条例・税理士確認が必要です。未入力は「要確認」で残します。</div><div class="pn-results">${pnCard('選択案件',`<div class="pn-kpi">${pnSafe(companies[currentCompany].name)}</div><div class="pn-muted">${pnSafe(pref)} / ${pnSafe(city||'市区町村未入力')}</div>`,'good')}${pnCard('法人税申告期限の原則',`<div class="pn-kpi">${deadline}</div><p class="pn-muted">原則として事業年度終了翌日から2か月以内。土日祝・申告期限延長は未反映。</p><a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/hojin/shinkoku/01.htm" target="_blank" rel="noopener">国税庁・提出時期 ↗</a>`,'good')}${pnCard('法人事業税（標準税率による参考額）',`<div class="pn-kpi">${estimate}</div><p class="pn-muted">対象：所得課税の一般普通法人／条件が揃う場合のみ参考試算。所得年400万円まで3.5%、800万円まで5.3%、超7.0%。短期年度は簡易按分の参考で法定計算と異なりえます。</p>`,eligible?'good':'warn')}${pnCard('所得・法人税額',`<p>所得金額：<b>${num===null?'要確認':num.toLocaleString()+'円'}</b></p><p>法人税額：<b>${tax===null?'要確認':tax.toLocaleString()+'円'}</b></p><p class="pn-muted">税額が入力されても、税率・税額計算を確定しません。</p>`,'good')}</div>`;
 all+=`<h3>◈ 地方税：都道府県・市区町村の判定</h3>${pnCard('選択自治体：'+pnSafe(pref)+' / '+pnSafe(city||'未入力'),verified+`<p>都道府県民税法人税割の法定標準税率は1.0%、市町村民税法人税割の法定標準税率は6.0%。いずれも実適用税率とは限りません。東京都23区や超過税率の取扱いは個別確認。</p><p><strong>均等割：</strong>資本金等の額・従業者数・所在月数・事務所所在地で決定。現時点では自動算定しません。</p><a href="https://laws.e-gov.go.jp/law/325AC0000000226" target="_blank" rel="noopener">地方税法（e-Gov）↗</a>`)}<h3>◈ 追加確認事項（${flags.length}件）</h3>${flags.length?flags.map((x,i)=>`<div class="pn-card pn-warn"><span class="pn-chip">要確認 ${i+1}</span> ${pnSafe(x)}</div>`).join(''):pnCard('入力必須項目の不足は見つかりません','ただし自治体の条例税率や届出の確認は引き続き必要です。','good')}`;
 all+=`<h3>◈ 申告・納品物ナビ</h3>${docs.map(([title,desc,status])=>`<details class="pn-card"><summary><span class="pn-chip">${status}</span>${title}</summary><p>${desc}</p><p class="pn-muted">対象年度や届出によって必要書類が変わるため、申告前に税理士と照合。</p></details>`).join('')}<h3>◈ 根拠と更新ポリシー</h3><div class="pn-card"><p>この版の数値は自治体ごとの全面収録ではありません。標準税率と東京都の公表表を分離し、実適用額の断定を回避しています。</p><p><a href="https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/hojin/shinkoku/01.htm" target="_blank" rel="noopener">国税庁：法人税申告 ↗</a>　<a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6610.htm" target="_blank" rel="noopener">国税庁：消費税期限 ↗</a></p><small>根拠資料点検日：2026年10月16日。将来改正への自動追従なし。</small></div>`;
-out.innerHTML=all;
+out.innerHTML=decisionRender(d,begin,end,pref,city)+all;
 }
+
+// v2.5: facts-based decision engine. Illustrative calculations, never a tax return computation.
+function decisionRender(d,start,end,pref,city){
+ const yen=n=>Math.round(n).toLocaleString('ja-JP')+'円';
+ const cap=pnNum(d.capitalExact),capitalBase=pnNum(d.capitalTax),head=pnNum(d.employeeCount),income=pnNum(d.income);
+ const ordinary=d.entityClass==='普通法人（一般業種）';
+ const valid=!!(start&&end&&start<end);
+ const months=valid?Math.min(12,Math.max(1,(end.getUTCFullYear()-start.getUTCFullYear())*12+end.getUTCMonth()-start.getUTCMonth()+1)):null;
+ const fullYear=valid&&start.getUTCDate()===1&&end.getUTCDate()===new Date(Date.UTC(end.getUTCFullYear(),end.getUTCMonth()+1,0)).getUTCDate()&&months===12;
+ const simpleLocal=pref==='東京都'&&/(区)$/.test(city)&&d.offices==='1か所'&&cfg.branch==='なし'&&d.external==='非該当'&&ordinary&&valid&&start>=new Date(Date.UTC(2022,3,1));
+ const cues=[],blocks=[];
+ const put=(title,body,status='pending')=>blocks.push(`<div class="de-result ${status}"><div class="de-title">${title}<span class="de-status">${status==='ok'?'条件に基づく試算':status==='review'?'要確認':'入力待ち'}</span></div>${body}</div>`);
+ if(!valid)cues.push('事業年度の正しい開始・終了日');
+ if(cap===null)cues.push('資本金（円）');
+ if(capitalBase===null)cues.push('資本金等の額（円）');
+ if(head===null)cues.push('従業者数（人）');
+ if(income===null)cues.push('税務上の所得金額（円）');
+ if(d.offices!=='1か所')cues.push('事務所等の全所在地・分割基準');
+ if(d.external!=='非該当')cues.push('外形標準課税の判定');
+ if(!city)cues.push('市区町村');
+ let applicable='判定保留';
+ if(valid&&ordinary&&cap!==null){
+  applicable=cap<=100000000?'資本金1億円以下の普通法人：軽減税率の確認対象':'資本金1億円超：原則23.2%の税率区分を確認';
+  if(cap<=100000000 && d.groupLarge==='該当なし確認済み'&&d.largeIncomeHistory==='年10億円超の年度なし確認済み'){
+   applicable='中小法人の15%軽減税率候補（特例除外・グループ等は別途確認）';
+  }
+ }
+ put('国税：法人税率区分',`<p class="de-value">${pnSafe(applicable)}</p><p>一般普通法人の参考税率：年800万円以下の部分は条件を満たす中小法人15%、年800万円超23.2%。軽減特例の除外条件・短期年度の区分額・法令改正を確認。</p><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5759.htm" target="_blank" rel="noopener">国税庁：法人税の税率 ↗</a>`,cap!==null&&valid?'review':'pending');
+ if(simpleLocal&&cap!==null&&income!==null&&income>=0&&fullYear){
+  // Tokyo published threshold for excess tax; annual income / capital thresholds as a screening only.
+  let over=cap>100000000||income>25000000;
+  let rates=over?[.0375,.05665,.0748]:[.035,.053,.07];
+  const a=Math.min(income,4000000),b=Math.min(Math.max(income-4000000,0),4000000),c=Math.max(income-8000000,0);
+  const tax=a*rates[0]+b*rates[1]+c*rates[2];
+  const rows=[[a,rates[0]],[b,rates[1]],[c,rates[2]]].map(([v,r],i)=>`<tr><td>${['400万円まで','400万円超800万円まで','800万円超'][i]}</td><td>${yen(v)}</td><td>${(r*100).toFixed(r===.05665?3:2)}%</td><td>${yen(v*r)}</td></tr>`).join('');
+  put('東京都：法人事業税 所得割',`<p class="de-value">${yen(tax)} <small>（計算過程の参考値）</small></p><p>候補：${over?'超過税率':'標準税率'}　／　入力に基づく所得区分</p><div class="de-scroll"><table><thead><tr><th>所得階層</th><th>課税標準参考</th><th>税率</th><th>参考額</th></tr></thead><tbody>${rows}</tbody></table></div><p class="de-note">この金額は確定申告額ではありません。東京都の税率判定フロー、特別法人事業税、千円未満の課税標準処理、端数処理、控除・既納付額等を未反映。超過税率の最終要否は公式フローで照合。</p><a href="https://www.tax.metro.tokyo.lg.jp/kazei/work/houjinji" target="_blank" rel="noopener">東京都主税局：税率・判定フロー ↗</a>`,'ok');
+ } else {
+  put('法人事業税：所在地別の税率判定',`<p class="de-value">${pnSafe(pref)}：適用税率は未確定</p><p>${pref==='東京都'?'東京都の事業税率表は収録済み。特別区の単一事業所・1年決算・普通法人等の条件がそろうと所得割の階層別参考試算を表示。':'この都道府県の条例別税率は未検証。全国一律の標準税率を適用税率として表示しません。'}</p><p>不足条件：${cues.length?cues.map(pnSafe).join('／'):'対象業種・事業年度の長さ・所在地・税率適用条件を確認'}</p>`,'review');
+ }
+ if(pref==='東京都'&&city.endsWith('区')&&d.offices==='1か所'&&capitalBase!==null&&head!==null&&fullYear&&ordinary){
+  const table=[[10000000,70000,140000],[100000000,180000,200000],[1000000000,290000,530000],[5000000000,950000,2290000],[Infinity,1210000,3800000]];
+  const row=table.find(r=>capitalBase<=r[0]);const annual=head<=50?row[1]:row[2];
+  put('東京都23区：法人都民税 均等割',`<p class="de-value">${yen(annual)} <small>（年額表の参考）</small></p><p>資本金等の額：${yen(capitalBase)}／従業者数：${head}人（50人${head<=50?'以下':'超'}）</p><p class="de-note">23区のみに事務所等があり、主たる事務所のある区の年額表を想定。所在月数・資本金等の税務上の調整・特殊法人・複数事務所は別途判定。実際の均等割額ではありません。</p><a href="https://www.tax.metro.tokyo.lg.jp/kazei/work/houjinji" target="_blank" rel="noopener">東京都：均等割税率表 ↗</a>`,'ok');
+ }else put('法人住民税：均等割',`<p class="de-value">税額判定保留</p><p>資本金等の額・従業者数・所在地・事務所数・在籍月数と自治体の税率表を照合します。</p>`,'review');
+ // Requirements generated from inputs, not from checkboxes.
+ const req=[];
+ if(cfg.term==='第1期')req.push(['第1期・設立時','設立日、資本金払込、設立届、青色申告承認などを確認']);
+ else if(cfg.term==='第2期以降')req.push(['前期の引継ぎ','前期申告書・期首残高・税額と繰越資料を照合']);
+ if(cfg.invoice==='登録あり')req.push(['インボイス登録','登録日と課税期間中の課税義務・申告書式を判定']);
+ if(cfg.tax==='免税'&&cfg.invoice==='登録あり')req.push(['消費税の矛盾候補','登録効力日と免税とした期間が整合しているか要確認']);
+ if(cfg.loan==='あり')req.push(['借入金','残高証明・返済予定表・利息と会計残高を突合']);
+ if(cfg.asset==='あり')req.push(['減価償却','固定資産台帳・取得日・償却区分・税制特例を確認']);
+ if(cfg.staff==='あり'||cfg.salary==='あり'||(head!==null&&head>0))req.push(['給与・源泉税','従業者/役員の給与、源泉税、社会保険、法定調書関連を確認']);
+ if(cfg.branch==='あり'||d.offices==='複数')req.push(['複数拠点の地方税','全所在地・分割基準・均等割を各自治体別に確認']);
+ if(!req.length)req.push(['基本資料','決算関係資料・法人税・地方税・消費税の申告要否を確認']);
+ let h=`<div class="de-section"><h3>◆ 条件から導き出した税率・税額</h3><p class="de-note">数値は条件入力から再計算します。未入力・未検証条件は「要確認」。対象：一般の内国普通法人を中心に検証中。</p><div class="de-grid">${blocks.join('')}</div><h3>◆ 条件で生成された作業（${req.length}件）</h3><div class="de-requires">${req.map(([a,b])=>`<div><strong>→ ${pnSafe(a)}</strong><small>${pnSafe(b)}</small></div>`).join('')}</div><h3>◆ 判定のために追加で必要な情報</h3>${cues.length?`<div class="de-requires">${cues.map(x=>`<div>⚠ ${pnSafe(x)}</div>`).join('')}</div>`:'<p>主要な入力はそろっています。ただし税務上の適用条件と原典照合は残ります。</p>'}</div>`;
+ return h;
+}
+
 const oldLoadCompany=loadCompany;loadCompany=function(id){oldLoadCompany(id);pnFields()};
 const oldInit=init;init=function(){oldInit();pnFields()};
 document.getElementById('precisionRun').onclick=()=>{playClick();pnRender();document.getElementById('precisionOutput').scrollIntoView({behavior:'smooth',block:'start'})};
